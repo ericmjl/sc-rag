@@ -158,13 +158,17 @@ def _(bot):
 
 @app.cell
 def _(bot):
-    bot("I want to do cell-cell communication analysis between different t cell subtypes")
+    bot(
+        "I want to do cell-cell communication analysis between different t cell subtypes"
+    )
     return
 
 
 @app.cell
 def _(bot):
-    bot("ok now I need one script that does the whole analsis from qc to annotation to cell-cell communication")
+    bot(
+        "ok now I need one script that does the whole analsis from qc to annotation to cell-cell communication"
+    )
     return
 
 
@@ -177,15 +181,13 @@ def _():
 def _(bot):
     import marimo as mo
 
+
     def model(messages, config):
         response = bot(messages[-1].content)
         return response.content
 
-    mo.ui.chat(
-        model,
-        show_configuration_controls=True
-    )
 
+    mo.ui.chat(model, show_configuration_controls=True)
     return
 
 
